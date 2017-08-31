@@ -1,0 +1,7 @@
+body { padding-bottom: 70px; }
+
+.nav > li > a:hover  {
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
