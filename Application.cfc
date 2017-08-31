@@ -37,6 +37,7 @@
 		<cfparam name="application.datasource" default="todo">
 		<cfparam name="application.environment" default="">
 
+		<!--- Using an in memorary h2 database. Create the table if it does not already exist --->
 		<cfquery>
 			CREATE TABLE IF NOT EXISTS ToDo (
 				p_todo_id bigint IDENTITY(1,1), 
