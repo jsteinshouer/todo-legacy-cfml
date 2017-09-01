@@ -18,8 +18,6 @@
 <cfcomponent output="false">
 	<cfset this.name = "TODO_APP">
 
-	<!--- 	Set up an in-memory datastore
-     You may need to install the H2 driver (or Apache Derby, or whatever) --->
 	<cfset this.datasources[ "todo" ] = {
 		class: 'org.h2.Driver',
 		connectionString: 'jdbc:h2:./db/todo;MODE=MySQL'
@@ -32,12 +30,6 @@
 	---> 
 	<cffunction name="onApplicationStart" output="false">
 
-		<!--- default settings --->
-		<cfparam name="application.appReloadKey" default="reload">
-		<cfparam name="application.datasource" default="todo">
-		<cfparam name="application.environment" default="">
-
-		<!--- Using an in memorary h2 database. Create the table if it does not already exist --->
 		<cfquery>
 			CREATE TABLE IF NOT EXISTS ToDo (
 				p_todo_id bigint IDENTITY(1,1), 
@@ -49,20 +41,5 @@
 
 		<cfreturn true>
 	</cffunction>
-
-	<!--- 	onRequestStart() as 
-			Description:  
-	---> 
-	<cffunction name="onRequestStart" output="false">
-
-		<!--- reload application --->
-		<cfparam name="application.appReloadKey" default="reload">
-		<cfif structKeyExists(url,application.appReloadKey) and url[application.appReloadKey]>
-			<cfset onApplicationStart()>
-		</cfif>
-		
-		<cfreturn true>
-	</cffunction>
-
 	
 </cfcomponent>

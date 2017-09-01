@@ -1,1 +1,5 @@
 db
+tests/specs/approval
+testbox
+testbox-snapshots
+coldbox

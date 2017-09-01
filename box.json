@@ -1,0 +1,14 @@
+{
+    "dependencies":{
+        "coldbox":"^4.3.0+188"
+    },
+    "devDependencies":{
+        "testbox-snapshots":"^1.1.2",
+        "testbox":"^2.5.0+107"
+    },
+    "installPaths":{
+        "testbox-snapshots":"testbox-snapshots",
+        "testbox":"testbox",
+        "coldbox":"coldbox"
+    }
+}
