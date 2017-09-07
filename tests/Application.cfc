@@ -20,9 +20,7 @@ component{
 	// any mappings go here, we create one that points to the root called test.
 	this.mappings[ "/tests" ] = getDirectoryFromPath( getCurrentTemplatePath() );
 
-
-	// application start
-	public boolean function onApplicationStart(  ){
+	public boolean function onRequestStart( String targetPage ){
 
 		/* Create table */
 		queryExecute("
@@ -33,11 +31,6 @@ component{
 				PRIMARY KEY (p_todo_id)
 			);
 		");
-
-		return true;
-	}
-
-	public boolean function onRequestStart( String targetPage ){
 
 		return true;
 	}
