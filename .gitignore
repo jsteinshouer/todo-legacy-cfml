@@ -1,5 +1,6 @@
 db
 tests/specs/approval
+tests/resources/snapshots
 testbox
 testbox-snapshots
 coldbox
